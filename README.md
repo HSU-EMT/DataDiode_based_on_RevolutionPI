@@ -1,3 +1,3 @@
 # DataDiode_based_on_RevolutionPI
 In processing...
-next step: write README
+next step: write README & hardware description.
