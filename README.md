@@ -6,7 +6,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/images/Logo_Emt.png">
-    <img src="https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/images/Logo_Emt.png" alt="Logo" width="140" height="80">
+    <img src="https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/images/Logo_Emt.png" alt="Logo" width="180" height="80">
   </a>
 
   <h3 align="center">A New Approach to Secure Industrial Automation Systems Based on Revolution Pi Modules</h3>
