@@ -14,7 +14,7 @@
   <p align="center">
     A puplication at ETFA2022
     <br />
-    <a href="https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/doc/doc.txt"><strong>Explore the paper »</strong></a>
+    <a href="https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/doc/README.md"><strong>Explore the paper »</strong></a>
     <br />
   </p>
 </div>
@@ -30,13 +30,18 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#required-software">Required Software</a></li>
         <li><a href="#required-hardware">Required Hardware</a></li>
+        <li><a href="#required-software">Required Software</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#hardware">Hardware</a></li>
-    <li><a href="#software">Software</a></li>
+    <li>
+      <a href="#instructions">Instructions</a>
+      <ul>
+        <li><a href="#hardware">Hardware</a></li>
+        <li><a href="#software">Software</a></li>
+      </ul>
+    </li>
     <li><a href="#results">Results</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -64,19 +69,19 @@ The concept proposed here can solve the above problems of existing data diodes. 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-
-### Required Software
-
-* [Vivado Design Suite](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/archive.html): We use Vivado HLx Editions 2019.1. Other versions may be suitable but not guaranteed.
-* [Xilinx Software Development Kit (SDK)](https://www.xilinx.com/support/documentation-navigation/design-hubs/dh0015-sdk-hub.html): We use SDK 2019.1 integrated with Vivado 2019.1. Recommend to take a look [here](https://digilent.com/reference/programmable-logic/guides/installing-vivado-and-sdk) to install all required softwares.
-
-
-### Required Hardware
+#### Required Hardware
 
 * [Zynq-7000 ARM/FPGA SoC Development Board](https://digilent.com/shop/zybo-z7-zynq-7000-arm-fpga-soc-development-board/): We use one Zybo Z7-20 board to build the data diode. Other board series may be suitable but not guaranteed. Also, if you use another board serie, you have to change the pins setting manually in [constrain](https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/project_1.srcs/constrs_1/new/constrain.xdc) file.
 * [Revolution Pi Modules](https://revolutionpi.de/revolution-pi-serie/): Two [RevPi Connect](https://revolutionpi.de/revpi-connect/) and one [DIO module](https://revolutionpi.de/io-modul/) are used in this project.
 * [RS-485 Pmod](https://digilent.com/reference/pmod/pmodrs485/start): Two RS-485 Pmod modules are required to build the RS-485 communication channel for the data diode.
 * Other basic equipment like 2 LAN cables, some [PiBridge connector](https://revolutionpi.de/shop/en/plug-pibridge), some wires, soldering device, power supply, Oscilloscope (optional).
+
+
+#### Required Software
+
+* [Vivado Design Suite](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/archive.html): We use Vivado HLx Editions 2019.1. Other versions may be suitable but not guaranteed.
+* [Xilinx Software Development Kit (SDK)](https://www.xilinx.com/support/documentation-navigation/design-hubs/dh0015-sdk-hub.html): We use SDK 2019.1 integrated with Vivado 2019.1. Recommend to take a look [here](https://digilent.com/reference/programmable-logic/guides/installing-vivado-and-sdk) to install all required softwares.
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -84,33 +89,37 @@ The concept proposed here can solve the above problems of existing data diodes. 
 <!-- USAGE -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+For more examples, please refer to the [Documentation](https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/doc/README.md)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
+## Instructions
 
 <!-- Hardware -->
-## Hardware
+#### Hardware
 
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
+1. First, the revpi modules are linked together via PiBridge. The figure below is the PiBridge connector and its pin assignment. A total of 3 PiBridge connectors are required. In which 2 connectors are uncapped so that they can be soldered to the wire.
+<div align="center">
+  <a href="https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/images/pin.jpg">
+    <img src="https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/images/pin.jpg" alt="pibridge" width="700" height="350">
+  </a>
+</div>
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+2. 
+
+<div align="center">
+  <a href="https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/images/schema.jpg">
+    <img src="https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/images/schema.jpg" alt="schema" width="700" height="350">
+  </a>
+</div>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
 <!-- Software -->
-## Software
+#### Software
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
