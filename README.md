@@ -144,7 +144,7 @@ For more examples, please refer to the [Documentation](https://github.com/HSU-EM
 <!-- CONTACT -->
 ## Contact
 
-Song Ha - [Email](song.ha@hsu-hh.de)
+Song Ha: song.ha@hsu-hh.de
 
 Project Link: [Github](https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI)
 
