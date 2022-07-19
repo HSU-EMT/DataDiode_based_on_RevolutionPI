@@ -74,7 +74,7 @@ The concept proposed here can solve the above problems of existing data diodes. 
 * [Zynq-7000 ARM/FPGA SoC Development Board](https://digilent.com/shop/zybo-z7-zynq-7000-arm-fpga-soc-development-board/): We use one Zybo Z7-20 board to build the data diode. Other board series may be suitable but not guaranteed. Also, if you use another board serie, you have to change the pins setting manually in [constrain](https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/project_1.srcs/constrs_1/new/constrain.xdc) file.
 * [Revolution Pi Modules](https://revolutionpi.de/revolution-pi-serie/): Two [RevPi Connect](https://revolutionpi.de/revpi-connect/) and one [DIO module](https://revolutionpi.de/io-modul/) are used in this project.
 * [RS-485 Pmod](https://digilent.com/reference/pmod/pmodrs485/start): Two RS-485 Pmod modules are required to build the RS-485 communication channel for the data diode.
-* Other basic equipment like 2 LAN cables, some [PiBridge connector](https://revolutionpi.de/shop/en/plug-pibridge), some wires, soldering device, power supply, Oscilloscope (optional).
+* Other basic equipment like two LAN cables, three [PiBridge connector](https://revolutionpi.de/shop/en/plug-pibridge), some wires, soldering device, power supply, Oscilloscope (optional).
 
 
 #### Required Software
