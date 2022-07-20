@@ -42,10 +42,7 @@
         <li><a href="#software">Software</a></li>
       </ul>
     </li>
-    <li><a href="#results">Results</a></li>
-    <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -141,22 +138,7 @@ For more examples, please refer to the [Documentation](https://github.com/HSU-EM
 3. Click on ``File`` -> ``Launch SDK``. Navigate to the folder ``applications`` for ``Exported location`` and ``Workspace``. Then click ``OK``. The SDK application will be opened.
 4. In SDK, click on ``File`` -> ``Open Projects From File System`` and add folder ``core0``, ``core0_bsp``, ``core1``, ``core1_bsp``in the folder ``applications`` into workspace.
 5. Right click on ``core1_bsp``. Select ``Board Support Package Setting``. There, add ``-DUSE_AMP`` for ``extra_compiler_flag`` of ``ps7_cortexa9_1``. This allows the use of interrupt controllers for multicore processors in Zynq, like [here](https://support.xilinx.com/s/article/62557?language=en_US).
-6. Run two applications ``main_core1.c`` and ``main_core0.c`` at the same time. If you are not familiar with it, we recommend that you check it out [here](https://www.youtube.com/watch?v=n0hbwp36hBs&t=412s).
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-<!-- Results -->
-## Results
-
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- LICENSE -->
-## License
-
+6. Run two applications ``main_core1.c`` on processor core 1 and ``main_core0.c`` on processor core 0. If you are not familiar with it, we recommend that you check it out [here](https://www.youtube.com/watch?v=n0hbwp36hBs&t=412s).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -168,13 +150,6 @@ For more examples, please refer to the [Documentation](https://github.com/HSU-EM
 Song Ha: song.ha@hsu-hh.de
 
 Project Link: [Github](https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
