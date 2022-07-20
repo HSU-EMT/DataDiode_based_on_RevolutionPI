@@ -99,14 +99,14 @@ For more examples, please refer to the [Documentation](https://github.com/HSU-EM
 <!-- Hardware -->
 #### Hardware
 
-1. First, the revpi modules are linked together via PiBridge. The figure below is the PiBridge connector and its pin assignment. A total of 3 PiBridge connectors are required. In which 2 connectors are uncapped so that they can be soldered to the wire.
+1. First, the RevPi modules are connected together via PiBridge. The figure below is the PiBridge connector and its pin assignment. A total of 3 PiBridge connectors are required. In which 2 connectors are uncapped so that they can be soldered to the wire.
 <div align="center">
   <a href="https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/images/pin.jpg">
     <img src="https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/images/pin.jpg" alt="pibridge" width="700" height="350">
   </a>
 </div>
 
-2. 
+2. The diagram below shows how hardware devices are connected to each other. The author recommends readers to go through the Zybo Z7-20 board manual reference [here](https://digilent.com/reference/programmable-logic/zybo-z7/reference-manual?redirect=1) so that the diagram below can be easily understood. JF, JD or JC are the Pmod ports on the board. Where 0, 9, 10 and 13 are the numbers of the used pins. The Pibridge pins are connected to Revpi modules or soldered to wires. The other end of these wires is connected to the pins of the Pmod ports or the pins of the RS-485 Pmods. Two 100kOhm resistors are used to create the pull-down connections. Two RevPi Connect have been selected as controller modules, denoted as Controller-OT and Controller OT Mirror. A RevPi DIO module is connected to the Controller-OT on the left side.
 
 <div align="center">
   <a href="https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/images/schema.jpg">
@@ -114,6 +114,13 @@ For more examples, please refer to the [Documentation](https://github.com/HSU-EM
   </a>
 </div>
 
+<div align="center">
+  <a href="https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/images/hardwares.jpg">
+    <img src="https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/images/hardwares.jpg" alt="schema" width="700" height="400">
+  </a>
+</div>
+
+3. 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 (NOT DONE YET)
