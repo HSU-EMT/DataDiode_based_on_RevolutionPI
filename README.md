@@ -43,6 +43,7 @@
         <li><a href="#test">Test</a></li>
       </ul>
     </li>
+    <li><a href="#Acknowledgments">Acknowledgments</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
@@ -87,7 +88,7 @@ The concept proposed here can solve the above problems of existing data diodes. 
 <!-- USAGE -->
 ## Usage
 
-For more examples, please refer to the [Documentation](https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/doc/README.md)
+For more details, please refer to the [Documentation](https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/doc/README.md)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -148,6 +149,11 @@ For more examples, please refer to the [Documentation](https://github.com/HSU-EM
 
 
 To test the setup, we connect 2 controllers to the laptop via SSH, e.g. with the ``Putty`` app, and use the ``piTest`` program like [here](https://www.youtube.com/watch?v=ug8WJmfFjYY) or [here](https://revolutionpi.com/tutorials/software/pitest-verwenden/). Change the value of any output or input variable of the DIO module next to Controller-OT module in ``piTest`` running on Controller-OT and read this change in ``piTest`` running on Controller-OT Mirror. If the change is successfully transferred, it means that your setup was successful.
+
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
+
+You can also connect more I/O modules to Controller-OT module. The process data of these I/O modules will be automatically transmitted to Controller-OT Mirror. For more details, please refer to the [Documentation](https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/doc/README.md)
 
 <!-- CONTACT -->
 ## Contact
