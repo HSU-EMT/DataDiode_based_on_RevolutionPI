@@ -101,7 +101,7 @@ For more details, please refer to the [Documentation](https://github.com/HSU-EMT
 1. First, the RevPi modules are connected together via [PiBridge](https://revolutionpi.com/pibridge/). The figure below is the PiBridge connector and its pin assignment. A total of 3 PiBridge connectors are required. In which 2 connectors are uncapped so that they can be soldered to wires.
 <div align="center">
   <a href="https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/images/pin.jpg">
-    <img src="https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/images/pin.jpg" alt="pibridge" width="700" height="350">
+    <img src="https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/images/pin.jpg" alt="pin" width="700" height="350">
   </a>
 </div>
 
@@ -115,7 +115,7 @@ For more details, please refer to the [Documentation](https://github.com/HSU-EMT
 
 <div align="center">
   <a href="https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/images/hardwares.jpg">
-    <img src="https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/images/hardwares.jpg" alt="schema" width="700" height="400">
+    <img src="https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/images/hardwares.jpg" alt="hardwares" width="700" height="400">
   </a>
 </div>
 
@@ -125,7 +125,7 @@ For more details, please refer to the [Documentation](https://github.com/HSU-EMT
 
 <div align="center">
   <a href="https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/images/pictory.jpg">
-    <img src="https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/images/pictory.jpg" alt="schema" width="900" height="230">
+    <img src="https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/images/pictory.jpg" alt="pictory" width="900" height="230">
   </a>
 </div>
 
@@ -150,10 +150,19 @@ For more details, please refer to the [Documentation](https://github.com/HSU-EMT
 
 To test the setup, we connect 2 controllers to the laptop via SSH, e.g. with the ``Putty`` app, and use the ``piTest`` program like [here](https://www.youtube.com/watch?v=ug8WJmfFjYY) or [here](https://revolutionpi.com/tutorials/software/pitest-verwenden/). Change the value of any output or input variable of the DIO module next to Controller-OT module in ``piTest`` running on Controller-OT and read this change in ``piTest`` running on Controller-OT Mirror. If the change is successfully transferred, it means that your setup was successful.
 
+<div align="center">
+  <a href="https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/images/pitest.jpg">
+    <img src="https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/images/pitest.jpg" alt="pitest" width="900" height="300">
+  </a>
+</div>
+
+Note that the output value of the real I/O modules connected to the Controller-OT is stored on the bytes of the counter channel of the data diode (leftmost DIO module in PiCtory). Therefore, when read by ``piTest``, its name has the form Counter_N_... by default, where N is the number of the counter channel, which corresponds to the number of the real I/O module (counted from the Controller-OT to outside). You can change the names of these variables in ``PiCtory`` as you wish. For more details, please refer to the [Documentation](https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/doc/README.md).
+
+
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-You can also connect more I/O modules to Controller-OT module. The process data of these I/O modules will be automatically transmitted to Controller-OT Mirror. For more details, please refer to the [Documentation](https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/doc/README.md)
+You can also connect more I/O modules to Controller-OT module. The process data of these I/O modules will be automatically transmitted to Controller-OT Mirror. For more details, please refer to the [Documentation](https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/doc/README.md).
 
 <!-- CONTACT -->
 ## Contact
