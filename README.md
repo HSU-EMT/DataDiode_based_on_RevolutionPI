@@ -40,6 +40,7 @@
       <ul>
         <li><a href="#hardware">Hardware</a></li>
         <li><a href="#software">Software</a></li>
+        <li><a href="#test">Test</a></li>
       </ul>
     </li>
     <li><a href="#contact">Contact</a></li>
@@ -142,7 +143,11 @@ For more examples, please refer to the [Documentation](https://github.com/HSU-EM
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+<!-- Test -->
+#### Test
 
+
+To test the setup, we connect 2 controllers to the laptop via SSH, e.g. with the ``Putty`` app, and use the ``piTest`` program like [here](https://www.youtube.com/watch?v=ug8WJmfFjYY) or [here](https://revolutionpi.com/tutorials/software/pitest-verwenden/). Change the value of any output or input variable in ``piTest`` running on Controller-OT and read this change in ``piTest`` running on Controller-OT Mirror. If the change is successfully transferred, it means that your setup was successful.
 
 <!-- CONTACT -->
 ## Contact
