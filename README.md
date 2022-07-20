@@ -99,14 +99,14 @@ For more examples, please refer to the [Documentation](https://github.com/HSU-EM
 <!-- Hardware -->
 #### Hardware
 
-1. First, the RevPi modules are connected together via PiBridge. The figure below is the PiBridge connector and its pin assignment. A total of 3 PiBridge connectors are required. In which 2 connectors are uncapped so that they can be soldered to the wire.
+1. First, the RevPi modules are connected together via [PiBridge](https://revolutionpi.com/pibridge/). The figure below is the PiBridge connector and its pin assignment. A total of 3 PiBridge connectors are required. In which 2 connectors are uncapped so that they can be soldered to the wire.
 <div align="center">
   <a href="https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/images/pin.jpg">
     <img src="https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/images/pin.jpg" alt="pibridge" width="700" height="350">
   </a>
 </div>
 
-2. The diagram below shows how hardware devices are connected to each other. The author recommends readers to go through the Zybo Z7-20 board manual reference [here](https://digilent.com/reference/programmable-logic/zybo-z7/reference-manual?redirect=1) so that the diagram below can be easily understood. JF, JD or JC are the Pmod ports on the board. Where 0, 9, 10 and 13 are the numbers of the used pins. The Pibridge pins are connected to Revpi modules or soldered to wires. The other end of these wires is connected to the pins of the Pmod ports or the pins of the RS-485 Pmods. Two 100kOhm resistors are used to create the pull-down connections. Two RevPi Connect have been selected as controller modules, denoted as Controller-OT and Controller OT Mirror. A RevPi DIO module is connected to the Controller-OT on the left side.
+2. The diagram below shows how hardware devices are connected to each other. The author recommends readers to go through manual reference of the Zybo Z7-20 board [here](https://digilent.com/reference/programmable-logic/zybo-z7/reference-manual?redirect=1) and RS-485 Pmod [here](https://digilent.com/reference/pmod/pmodrs485/reference-manual) so that the diagram below can be easily understood. JF, JD or JC are the Pmod ports on the board. Where 0, 9, 10 and 13 are the numbers of the used pins. The Pibridge pins are connected to Revpi modules or soldered to wires. The other end of these wires is connected to the pins of the Pmod ports or the pins of the RS-485 Pmods. Two 100kOhm resistors are used to create the pull-down connections. Two RevPi Connect have been selected as controller modules, denoted as Controller-OT and Controller OT Mirror. A RevPi DIO module is connected to the Controller-OT on the left side.
 
 <div align="center">
   <a href="https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/images/schema.jpg">
@@ -120,14 +120,28 @@ For more examples, please refer to the [Documentation](https://github.com/HSU-EM
   </a>
 </div>
 
-3. 
-<p align="right">(<a href="#top">back to top</a>)</p>
+3. [Power supply](https://revolutionpi.com/tutorials/uebersicht-revpi-connect/spannungsversorgung-anschliessen-connect/) for circuit boards and RevPi devices. Connect 2 controller modules via LAN cable to your laptop to be able to configure RevPi modules in PiCtory. See [here](https://revolutionpi.com/tutorials/uebersicht-revpi-connect/) and [here](https://revolutionpi.com/tutorials/was-ist-pictory-2/) for more details.
 
-(NOT DONE YET)
+4. In PiCtory, two DIO modules and one RevPi Connect are configured for each Controller-OT and Controller-OT Mirror. The DIO module next to the RevPi Connect is set to default. The leftmost DIO module activates 6 counter channels as shown below.
+
+<div align="center">
+  <a href="https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/images/pictory.jpg">
+    <img src="https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/images/pictory.jpg" alt="schema" width="900" height="230">
+  </a>
+</div>
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- Software -->
 #### Software
 
+1. Download or clone this repository.
+2. Open `project_1.xpr` with Vivado. All IP cores and pin assignments have been designed. Click the button ``Generate Bitstream``. After bitstream has been created. Click on ``File`` -> ``Export`` -> ``Export Hardware``. Navigate to the folder ``applications`` and check on ``Include Bitstream``. Then click ``OK``.
+3. Click on ``File`` -> ``Launch SDK``. Navigate to the folder ``applications`` for ``Exported location`` and ``Workspace``. Then click ``OK``. The SDK application will be opened.
+4. In SDK, click on ``File`` -> ``Open Projects From File System`` and add folder ``core0``, ``core0_bsp``, ``core1``, ``core1_bsp``in the folder ``applications`` into workspace.
+5. Right click on ``core1_bsp``. Select ``Board Support Package Setting``. There, add ``-DUSE_AMP`` for ``extra_compiler_flag`` of ``ps7_cortexa9_1``. This allows the use of interrupt controllers for multicore processors in Zynq, like [here](https://support.xilinx.com/s/article/62557?language=en_US).
+6. Run two applications ``main_core1.c`` and ``main_core0.c`` at the same time. If you are not familiar with it, we recommend that you check it out [here](https://www.youtube.com/watch?v=n0hbwp36hBs&t=412s).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
