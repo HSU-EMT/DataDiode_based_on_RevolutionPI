@@ -34,6 +34,10 @@
 
 /************************** GLOBAL VARIABLES ******************************/
 
+int Status, error_count = 0;
+int Normal_operation = 1;
+u8 DataDiode_address = 0;
+
 INTC IntcInstance;	      /* The instance of the Interrupt Controller */
 XUartLite UartLiteInst;
 XGpioPs Gpio, *Gpio_Ptr = &Gpio;	//The driver instance for GPIO Device
@@ -56,44 +60,9 @@ Init_Config_s Init_Config_status = {0};
 /*
  * Custom error message was used because not all errors are
  * included by xstatus.h. Define more on default_types.h
- * for your own purposes
+ * for your own purposes.
  */
 HRESULT hr = SYSTEM_SUCCESS;
-
-
-/*
- * Set manual some required device informations of DIO module to answer the master's request. This part should be rebuilt to a smarter format after all
- */
-
-
-u8 ResponseBuffer_GetDeviceInfor[BYTE_SIZE_GET_DEVICE_INFOR_DIO_RESPONSE] = {0x00,0x00,
-		0x0A,0x40,0x00,0x00,0x16,0x81,0x36,0x00,0x00,0x60,0x00,0x01,0x00,0x01,0x00,0x04,
-		0x00,0xD1,0x30,0x00,0x00,0x46,0x00,0x12,0x00,0x02,0x00,0x00};
-
-u8 ResponseBuffer_SetAddress[BYTE_SIZE_SET_ADDRESS_DIO_RESPONSE] = {0x00, 0x00, ADDRESS_SETTING_CODE, 0x40, 0x00, 0x00, 0x00, 0x00}; //Note, need to set CRC later. It is not always 0x4B
-u8 ResponseBuffer_Config_DIO[BYTE_SIZE_CONFIG_DIO_RESPONSE] = {0x00, 0x20, 0x00}; // 0x20 is the command code for response of DIO when it is configurated
-u8 ResponseBuffer_Data_Exchange_Diode[BYTE_SIZE_DATA_EXCHANGE_DIO_RESPONSE];
-
-u8 Self_Data_Buffer[SELF_DATA_BUFFER_SIZE];
-u8 BroadcastBuffer[BYTE_SIZE_BROADCAST];
-u8 HeaderBuffer[BYTE_SIZE_HEADER];
-
-u32 sniff1_check, sniff2_check;
-int Status, error_count = 0;
-int Device_count = 0;
-
-int Infor_exchanged = 0;
-int config_count = 0;
-
-int Normal_operation = 1;
-
-u8 DataDiode_address = 0;
-u8 Device_address = 0;
-u8 Command, ReqRes;
-
-
-
-int real_modul_initialized = 0;
 
 
 int main()
