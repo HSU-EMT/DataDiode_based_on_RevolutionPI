@@ -44,7 +44,6 @@
     </li>
     <li><a href="#test">Test</a></li>
     <li><a href="#others">Others</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -165,10 +164,6 @@ Note that the output value of the real I/O modules connected to the Controller-O
 
 2. We are still improving the code and developing the project. Please report bugs if you find them.
 
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-The authors would like to acknowledge [Pilz GmbH](https://www.pilz.com/en-DE), [Kunbus GmbH](https://www.kunbus.com/), Ms. Bettina Solzbacher, Mr. Jonas Jockram and Mr. Christoph Cammin at [HSU-EMT](https://www.hsu-hh.de/emt/en/) for their continuous support.
 
 Project Link: [Github](https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI)
 
