@@ -157,7 +157,7 @@ You can also connect more I/O modules to Controller-OT module. The process data 
 
 <!-- CONTACT -->
 ## Contact
-
+We are still improving the code and developing the project. Please report bugs to
 Song Ha: song.ha@hsu-hh.de
 
 Project Link: [Github](https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI)
