@@ -147,7 +147,7 @@ For more details, please refer to the [Documentation](https://github.com/HSU-EMT
 ## Test
 
 
-To test the setup, we connect 2 controllers to the laptop via SSH, e.g. with the ``Putty`` app, and use the ``piTest`` program like [here](https://www.youtube.com/watch?v=ug8WJmfFjYY) or [here](https://revolutionpi.com/tutorials/software/pitest-verwenden/). Change the value of any output or input variable of the DIO module next to Controller-OT module in ``piTest`` running on Controller-OT and read this change in ``piTest`` running on Controller-OT Mirror. If the change is successfully transferred, it means that your setup was successful.
+To test the setup, we connect 2 controllers to the laptop via SSH, e.g. with the [``Putty``](https://www.putty.org/) app, and use the ``piTest`` program like [here](https://www.youtube.com/watch?v=ug8WJmfFjYY) or [here](https://revolutionpi.com/tutorials/software/pitest-verwenden/). Change the value of any output or input variable of the DIO module next to Controller-OT module in ``piTest`` running on Controller-OT and read this change in ``piTest`` running on Controller-OT Mirror. If the change is successfully transferred, it means that your setup was successful.
 
 <div align="center">
   <a href="https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/images/pitest.jpg">
