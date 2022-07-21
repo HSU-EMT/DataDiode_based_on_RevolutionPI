@@ -43,7 +43,7 @@
       </ul>
     </li>
     <li><a href="#test">Test</a></li>
-    <li><a href="#others">Others</a></li>
+    <li><a href="#notes">Notes</a></li>
   </ol>
 </details>
 
@@ -160,7 +160,7 @@ The output value of the real I/O modules connected to the Controller-OT is store
 For more details, please refer to the [Documentation](https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/doc/README.md).
 
 
-## Others
+## Notes
 
 1. You can also connect more I/O modules to Controller-OT module. The process data of these I/O modules will be automatically transmitted to Controller-OT Mirror. For more details, please refer to the [Documentation](https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/doc/README.md).
 2. The size of the response packet of the data diode can be changed by setting the number of active counter channels for the DIO module emulated by the data diode in PiCtory (leftmost DIO module in PiCtory). Each counter channel corresponds to four bytes and up to six counter channels are possibly active at the same time, corresponds to 24 free bytes to store output value of the real I/O modules. Because of the limited number of these bytes, we had to limit some features of real I/O modules connected to Controller-OT such as: Do not use PWM features for DO,DIO modules; do not use MIO modules. We will try to remove these limitations in the next data diode version.
