@@ -151,7 +151,7 @@ To test the setup, we connect 2 controllers to the laptop via SSH, e.g. with the
 
 <div align="center">
   <a href="https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/images/pitest.jpg">
-    <img src="https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/images/pitest.jpg" alt="pitest" width="900" height="300">
+    <img src="https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/images/pitest.jpg" alt="pitest" width="900" height="280">
   </a>
 </div>
 
