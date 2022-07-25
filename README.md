@@ -104,7 +104,7 @@ For more details, please refer to the [Documentation](https://github.com/HSU-EMT
   </a>
 </div>
 
-2. The diagram below shows how hardware devices are connected to each other. The author recommends readers to go through manual reference of the Zybo Z7-20 board [here](https://digilent.com/reference/programmable-logic/zybo-z7/reference-manual?redirect=1) and RS-485 Pmod [here](https://digilent.com/reference/pmod/pmodrs485/reference-manual) so that the diagram below can be easily understood. JF, JD or JC are the Pmod ports on the board. Where 0, 9, 10 and 13 are the numbers of the used pins. The Pibridge pins are connected to Revpi modules or soldered to wires. The other end of these wires is connected to the pins of the Pmod ports or the pins of the RS-485 Pmods. Two 100kOhm resistors are used to create the pull-down connections. Two RevPi Connect have been selected as controller modules, denoted as Controller-OT and Controller OT Mirror. A RevPi DIO module is connected to the Controller-OT on the left side.
+2. The diagram below shows how hardware devices are connected to each other. The author recommends readers to go through manual reference of the Zybo Z7-20 board [here](https://digilent.com/reference/programmable-logic/zybo-z7/reference-manual?redirect=1) and RS-485 Pmod [here](https://digilent.com/reference/pmod/pmodrs485/reference-manual) so that the diagram below can be easily understood. JF, JD or JC are the Pmod ports on the board. Where 0, 9, 10 and 13 are the numbers of the used pins. The Pibridge pins are connected to Revpi modules or soldered to wires. The other end of these wires is connected to the pins of the Pmod ports or the pins of the RS-485 Pmods. Two 100kOhm resistors are used to create the pull-down connections. Two RevPi Connect have been selected as controller modules, denoted as PLC and PLC-Mirror (PLCM). A RevPi DIO module is connected to the PLC on the left side.
 
 <div align="center">
   <a href="https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/images/schema.jpg">
@@ -120,7 +120,7 @@ For more details, please refer to the [Documentation](https://github.com/HSU-EMT
 
 3. [Power supply](https://revolutionpi.com/tutorials/uebersicht-revpi-connect/spannungsversorgung-anschliessen-connect/) for circuit boards and RevPi devices. Connect 2 controller modules via LAN cable to your laptop to be able to configure RevPi modules in PiCtory. See [here](https://revolutionpi.com/tutorials/uebersicht-revpi-connect/) and [here](https://revolutionpi.com/tutorials/was-ist-pictory-2/) for more details.
 
-4. In PiCtory, two DIO modules and one RevPi Connect are configured for each Controller-OT and Controller-OT Mirror. The DIO module next to the RevPi Connect is set to default. The leftmost DIO module activates 6 counter channels as shown below.
+4. In PiCtory, two DIO modules and one RevPi Connect are configured for each PLC and PLC-Mirror (#). The DIO module next to the RevPi Connect is set to default. The leftmost DIO module activates 6 counter channels as shown below.
 
 <div align="center">
   <a href="https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/images/pictory.jpg">
@@ -147,7 +147,7 @@ For more details, please refer to the [Documentation](https://github.com/HSU-EMT
 ## Test
 
 
-To test the setup, we connect 2 controllers to the laptop via SSH, e.g. with the [``Putty``](https://www.putty.org/) app, and use the ``piTest`` program like [here](https://www.youtube.com/watch?v=ug8WJmfFjYY) or [here](https://revolutionpi.com/tutorials/software/pitest-verwenden/). Change the value of any output or input variable of the DIO module next to Controller-OT module in ``piTest`` running on Controller-OT and read this change in ``piTest`` running on Controller-OT Mirror. If the change is successfully transferred, it means that your setup was successful.
+To test the setup, we connect 2 controllers to the laptop via SSH, e.g. with the [``Putty``](https://www.putty.org/) app, and use the ``piTest`` program like [here](https://www.youtube.com/watch?v=ug8WJmfFjYY) or [here](https://revolutionpi.com/tutorials/software/pitest-verwenden/). Change the value of any output or input variable of the DIO module next to PLC module in ``piTest`` running on PLC and read this change in ``piTest`` running on PLCM. If the change is successfully transferred, it means that your setup was successful.
 
 <div align="center">
   <a href="https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/images/pitest.jpg">
@@ -155,16 +155,16 @@ To test the setup, we connect 2 controllers to the laptop via SSH, e.g. with the
   </a>
 </div>
 
-The output value of the real I/O modules connected to the Controller-OT is stored on response packet of the data diode (Fig. 5 in [Documentation](https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/doc/README.md)), namely on the bytes of the counter channel of the data diode (leftmost DIO module in PiCtory). Therefore, when read by ``piTest``, its name has the form Counter_N_... by default, where N is the number of the counter channel, which corresponds to the number of the real I/O module (counted from the Controller-OT to outside). You can change the names of these variables in ``PiCtory`` as you wish.
+The output value of the real I/O modules connected to the PLC is stored on response packet of the data diode (Fig. 5 in [Documentation](https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/doc/README.md)), namely on the bytes of the counter channel of the data diode (leftmost DIO module in PiCtory). Therefore, when read by ``piTest``, its name has the form Counter_N_... by default, where N is the number of the counter channel, which corresponds to the number of the real I/O module (counted from the PLC to outside). You can change the names of these variables in ``PiCtory`` as you wish.
 
 For more details, please refer to the [Documentation](https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/doc/README.md).
 
 
 ## Notes
 
-1. You can also connect more I/O modules to Controller-OT module. The process data of these I/O modules will be automatically transmitted to Controller-OT Mirror. For more details, please refer to the [Documentation](https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/doc/README.md).
-2. The size of the response packet of the data diode can be changed by setting the number of active counter channels for the DIO module emulated by the data diode in PiCtory (leftmost DIO module in PiCtory). Each counter channel corresponds to four bytes and up to six counter channels are possibly active at the same time, corresponds to 24 free bytes to store output value of the real I/O modules. Because of the limited number of these bytes, we had to limit some features of real I/O modules connected to Controller-OT to restrict their output value length, such as: Do not use PWM features for DO,DIO modules; do not use MIO modules. We will try to remove these limitations in the next data diode version.
-3. In the PiCtory, users must set the feature of the I/O modules connected to Controller-OT Mirror and the corresponding I/O modules connected to Controller-OT identically to minimize the difference in cycle time between the two networks during the cyclic data exchange phase.
+1. You can also connect more I/O modules to PLC module. The process data of these I/O modules will be automatically transmitted to PLCM. For more details, please refer to the [Documentation](https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/doc/README.md).
+2. The size of the response packet of the data diode can be changed by setting the number of active counter channels for the DIO module emulated by the data diode in PiCtory (leftmost DIO module in PiCtory). Each counter channel corresponds to four bytes and up to six counter channels are possibly active at the same time, corresponds to 24 free bytes to store output value of the real I/O modules. Because of the limited number of these bytes, we had to limit some features of real I/O modules connected to PLC to restrict their output value length, such as: Do not use PWM features for DO,DIO modules; do not use MIO modules. We will try to remove these limitations in the next data diode version.
+3. In the PiCtory, users must set the feature of the I/O modules connected to PLCM and the corresponding I/O modules connected to PLC identically to minimize the difference in cycle time between the two networks during the cyclic data exchange phase.
 4. We are still improving the code and developing the project. Please report bugs if you find them.
 
 
