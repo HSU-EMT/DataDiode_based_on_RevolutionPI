@@ -120,7 +120,7 @@ For more details, please refer to the [Documentation](https://github.com/HSU-EMT
 
 3. [Power supply](https://revolutionpi.com/tutorials/uebersicht-revpi-connect/spannungsversorgung-anschliessen-connect/) for circuit boards and RevPi devices. Connect 2 controller modules via LAN cable to your laptop to be able to configure RevPi modules in PiCtory. See [here](https://revolutionpi.com/tutorials/uebersicht-revpi-connect/) and [here](https://revolutionpi.com/tutorials/was-ist-pictory-2/) for more details.
 
-4. In PiCtory, two DIO modules and one RevPi Connect are configured for each PLC and PLC-Mirror (#). The DIO module next to the RevPi Connect is set to default. The leftmost DIO module activates 6 counter channels as shown below.
+4. In PiCtory, two DIO modules and one RevPi Connect are configured for each PLC and PLCM. The DIO module next to the RevPi Connect is set to default. The leftmost DIO module activates 6 counter channels as shown below.
 
 <div align="center">
   <a href="https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/images/pictory.jpg">
