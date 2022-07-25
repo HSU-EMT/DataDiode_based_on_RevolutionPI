@@ -40,11 +40,10 @@
       <ul>
         <li><a href="#hardware">Hardware</a></li>
         <li><a href="#software">Software</a></li>
-        <li><a href="#test">Test</a></li>
       </ul>
     </li>
-    <li><a href="#Acknowledgments">Acknowledgments</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#test">Test</a></li>
+    <li><a href="#notes">Notes</a></li>
   </ol>
 </details>
 
@@ -145,29 +144,29 @@ For more details, please refer to the [Documentation](https://github.com/HSU-EMT
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- Test -->
-#### Test
+## Test
 
 
-To test the setup, we connect 2 controllers to the laptop via SSH, e.g. with the ``Putty`` app, and use the ``piTest`` program like [here](https://www.youtube.com/watch?v=ug8WJmfFjYY) or [here](https://revolutionpi.com/tutorials/software/pitest-verwenden/). Change the value of any output or input variable of the DIO module next to Controller-OT module in ``piTest`` running on Controller-OT and read this change in ``piTest`` running on Controller-OT Mirror. If the change is successfully transferred, it means that your setup was successful.
+To test the setup, we connect 2 controllers to the laptop via SSH, e.g. with the [``Putty``](https://www.putty.org/) app, and use the ``piTest`` program like [here](https://www.youtube.com/watch?v=ug8WJmfFjYY) or [here](https://revolutionpi.com/tutorials/software/pitest-verwenden/). Change the value of any output or input variable of the DIO module next to Controller-OT module in ``piTest`` running on Controller-OT and read this change in ``piTest`` running on Controller-OT Mirror. If the change is successfully transferred, it means that your setup was successful.
 
 <div align="center">
   <a href="https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/images/pitest.jpg">
-    <img src="https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/images/pitest.jpg" alt="pitest" width="900" height="300">
+    <img src="https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/images/pitest.jpg" alt="pitest" width="900" height="280">
   </a>
 </div>
 
-Note that the output value of the real I/O modules connected to the Controller-OT is stored on the bytes of the counter channel of the data diode (leftmost DIO module in PiCtory). Therefore, when read by ``piTest``, its name has the form Counter_N_... by default, where N is the number of the counter channel, which corresponds to the number of the real I/O module (counted from the Controller-OT to outside). You can change the names of these variables in ``PiCtory`` as you wish. For more details, please refer to the [Documentation](https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/doc/README.md).
+The output value of the real I/O modules connected to the Controller-OT is stored on response packet of the data diode (Fig. 5 in [Documentation](https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/doc/README.md)), namely on the bytes of the counter channel of the data diode (leftmost DIO module in PiCtory). Therefore, when read by ``piTest``, its name has the form Counter_N_... by default, where N is the number of the counter channel, which corresponds to the number of the real I/O module (counted from the Controller-OT to outside). You can change the names of these variables in ``PiCtory`` as you wish.
+
+For more details, please refer to the [Documentation](https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/doc/README.md).
 
 
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
+## Notes
 
-You can also connect more I/O modules to Controller-OT module. The process data of these I/O modules will be automatically transmitted to Controller-OT Mirror. For more details, please refer to the [Documentation](https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/doc/README.md).
+1. You can also connect more I/O modules to Controller-OT module. The process data of these I/O modules will be automatically transmitted to Controller-OT Mirror. For more details, please refer to the [Documentation](https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/doc/README.md).
+2. The size of the response packet of the data diode can be changed by setting the number of active counter channels for the DIO module emulated by the data diode in PiCtory (leftmost DIO module in PiCtory). Each counter channel corresponds to four bytes and up to six counter channels are possibly active at the same time, corresponds to 24 free bytes to store output value of the real I/O modules. Because of the limited number of these bytes, we had to limit some features of real I/O modules connected to Controller-OT to restrict their output value length, such as: Do not use PWM features for DO,DIO modules; do not use MIO modules. We will try to remove these limitations in the next data diode version.
+3. In the PiCtory, users must set the feature of the I/O modules connected to Controller-OT Mirror and the corresponding I/O modules connected to Controller-OT identically to minimize the difference in cycle time between the two networks during the cyclic data exchange phase.
+4. We are still improving the code and developing the project. Please report bugs if you find them.
 
-<!-- CONTACT -->
-## Contact
-We are still improving the code and developing the project. Please report bugs to
-Song Ha: song.ha@hsu-hh.de
 
 Project Link: [Github](https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI)
 
