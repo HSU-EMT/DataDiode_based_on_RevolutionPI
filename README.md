@@ -140,6 +140,8 @@ For more details, please refer to the [Documentation](https://github.com/HSU-EMT
 4. In SDK, click on ``File`` -> ``Open Projects From File System`` and add folder ``core0``, ``core0_bsp``, ``core1``, ``core1_bsp``in the folder ``applications`` into workspace.
 5. Right click on ``core1_bsp``. Select ``Board Support Package Setting``. There, add ``-DUSE_AMP`` for ``extra_compiler_flag`` of ``ps7_cortexa9_1``. This allows the use of interrupt controllers for multicore processors in Zynq, like [here](https://support.xilinx.com/s/article/62557?language=en_US).
 6. Run two applications ``main_core1.c`` on processor core 1 and ``main_core0.c`` on processor core 0. If you are not familiar with it, we recommend that you check it out [here](https://www.youtube.com/watch?v=n0hbwp36hBs&t=412s).
+7. Reset PLC and PLCM in PicTory. Note that PLC must be reset first. See [Documentation](https://github.com/HSU-EMT/DataDiode_based_on_RevolutionPI/blob/main/others/doc/README.md) for the reason.
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
